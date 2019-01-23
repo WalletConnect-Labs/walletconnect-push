@@ -5,6 +5,7 @@ import axios from 'axios'
 import config from './config/index'
 import { setClientDetails, getClientDetails } from './keystore'
 import { formatMessage } from './i18n'
+import { ClientDetails } from './types'
 
 const fcmApi = axios.create({
   baseURL: config.fcm.url,
@@ -52,7 +53,8 @@ app.post('/new', async (req, res) => {
     })
   }
 
-  const clientDetails = { type, token, peerName, language }
+  const clientDetails: ClientDetails = { type, token, peerName, language }
+
   try {
     await setClientDetails(topic, clientDetails)
     return res.status(200).send({
@@ -74,7 +76,15 @@ app.post('/push', async (req, res) => {
     })
   }
 
-  const { type, token, peerName, language } = await getClientDetails(topic)
+  const clientDetails = await getClientDetails(topic)
+
+  if (!clientDetails) {
+    return res.status(400).send({
+      message: 'Error: failed to get client details'
+    })
+  }
+
+  const { type, token, peerName, language } = clientDetails
 
   switch (type.toLowerCase()) {
     case 'fcm':

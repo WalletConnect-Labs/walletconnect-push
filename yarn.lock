@@ -699,6 +699,13 @@
     "@types/events" "*"
     "@types/node" "*"
 
+"@types/redis@^2.8.10":
+  version "2.8.10"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-2.8.10.tgz#27130c3bcc803265a51cb978538ca330dff2e748"
+  integrity sha512-X0NeV3ivoif2SPsmuPhwTkKfcr1fDJlaJIOyxZ9/TCIEbvzMzmZlstqCZ5r7AOolbOJtAfvuGArNXMexYYH3ng==
+  dependencies:
+    "@types/node" "*"
+
 "@types/ws@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@types/ws/-/ws-6.0.1.tgz#ca7a3f3756aa12f62a0a62145ed14c6db25d5a28"
@@ -889,11 +896,6 @@ binary-extensions@^1.0.0:
   version "1.12.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
   integrity sha512-DYWGk01lDcxeS/K9IHPGWfT8PsJmbXRtRd2Sx72Tnb8pcYZQFF1oSDb8hJtS1vhp212q1Rzi5dUf9+nq0o9UIg==
-
-bluebird@^3.5.3:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
-  integrity sha512-/qKPUQlaW1OyR51WeCPBvRnAlnZFUJkCSG5HzGnuIqhgyJtF+T94lFnn33eiazjRm2LAHVy2guNnaq48X9SJuw==
 
 brace-expansion@^1.1.7:
   version "1.1.11"
