@@ -1,5 +1,5 @@
 {
-  "name": "walletconnect-bridge",
+  "name": "walletconnect-push",
   "version": "1.0.0-beta",
   "private": true,
   "keywords": [
@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/walletconnect/walletconnect-bridge.git"
+    "url": "git+https://github.com/walletconnect/walletconnect-push.git"
   },
   "bugs": {
-    "url": "https://github.com/walletconnect/walletconnect-bridge/issues"
+    "url": "https://github.com/walletconnect/walletconnect-push/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
