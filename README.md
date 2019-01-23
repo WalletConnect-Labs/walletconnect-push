@@ -1,4 +1,4 @@
-# WalletConnect Push
+# WalletConnect Push Server
 
 ## Develop
 
