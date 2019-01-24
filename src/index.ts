@@ -58,7 +58,9 @@ app.post('/new', async (req, res) => {
   try {
     await setClientDetails(topic, clientDetails)
 
-    const { data } = await axios.post(`${bridge}/subscribe`, { topic })
+    const webhook = `${config.host}/push`
+
+    const { data } = await axios.post(`${bridge}/subscribe`, { topic, webhook })
 
     if (!data.success) {
       return res.status(400).send({

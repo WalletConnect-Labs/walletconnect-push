@@ -11,13 +11,16 @@ const fileName =
 const configFile = `${root}${fileName}`
 const env = process.env.NODE_ENV || 'development'
 const debug = env !== 'production'
+const port = process.env.PORT || env === 'production' ? 5000 : 5002
+const host = process.env.HOST || `localhost:${port}`
 
 dotenv.config({ path: configFile, debug: debug })
 
 export default {
   env: env,
   debug: debug,
-  port: process.env.PORT || env === 'production' ? 5000 : 5002,
+  port: port,
+  host: host,
   redis: {
     url: process.env.REDIS_URL || 'redis://localhost:6379/0',
     prefix: process.env.REDIS_PREFIX || 'wc-push'
