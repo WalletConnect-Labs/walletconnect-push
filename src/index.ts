@@ -21,7 +21,7 @@ const app = fastify({ logger: config.debug })
 app.register(helmet)
 
 app.post('/new', async (req, res) => {
-  const { topic, type, token, peerName, language } = req.body
+  const { bridge, topic, type, token, peerName, language } = req.body
 
   if (!topic || typeof topic !== 'string') {
     return res.status(400).send({
@@ -57,6 +57,15 @@ app.post('/new', async (req, res) => {
 
   try {
     await setClientDetails(topic, clientDetails)
+
+    const { data } = await axios.post(`${bridge}/subscribe`, { topic })
+
+    if (!data.success) {
+      return res.status(400).send({
+        message: 'Error: failed to subscribe to bridge server'
+      })
+    }
+
     return res.status(200).send({
       success: true
     })
